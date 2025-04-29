@@ -5,3 +5,9 @@ def rolar_dados(qtd_dados):
 
     return dados_rolados
 
+def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):
+
+    dado = dados_rolados.pop(dado_para_guardar)
+    dados_no_estoque.append(dado)
+
+    return [dados_rolados, dados_no_estoque]
