@@ -68,3 +68,30 @@ def calcula_pontos_sequencia_baixa (dados):
             return 15
     
     return 0
+
+def calcula_pontos_sequencia_alta(dados):
+    
+    l_ordem = []
+
+    for n in dados:
+
+
+        if n not in l_ordem:
+            l_ordem.append(n)
+
+    
+    if len(l_ordem)<5:
+        return 0
+
+    l_ordem = sorted(l_ordem)
+
+    for i in range(len(l_ordem)-1):
+        proximo = l_ordem[i] + 1
+
+
+        if l_ordem[i+1] != proximo:
+
+            return 0
+    return 30
+    
+    
