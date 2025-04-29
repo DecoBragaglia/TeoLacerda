@@ -31,3 +31,40 @@ def calcula_pontos_soma(dados):
     for dado in dados:
         total += dado
     return total
+
+def calcula_pontos_sequencia_baixa(dados):
+    dados_unicos = sorted(set(dados)) 
+
+    sequencias_baixas = [
+        [1, 2, 3, 4]
+        [2, 3, 4, 5]
+        [3, 4, 5, 6]
+    ]
+
+    for sequencia in sequencias_baixas:
+        if all(numero in dados_unicos for numero in sequencia):
+            return 15
+    return 0 
+
+def calcula_pontos_sequencia_baixa (dados):
+
+    l_ordem = []
+
+    for n in dados:
+        if n not in l_ordem:
+            l_ordem.append(n)
+    
+    l_ordem = sorted(l_ordem)
+
+    if len(l_ordem)<4:
+        return 0
+
+    for i in range(len(l_ordem) - 3):
+
+        cond1 = l_ordem[i+1] == l_ordem[i] + 1 and l_ordem[i+2] == l_ordem[i] + 2 and l_ordem[i+3] == l_ordem[i] + 3
+
+        if cond1:
+
+            return 15
+    
+    return 0
