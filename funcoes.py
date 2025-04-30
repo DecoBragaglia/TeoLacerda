@@ -125,3 +125,16 @@ def calcula_pontos_quadra(dados):
                 soma += dado
             return soma
     return soma
+
+def calcula_pontos_quina(lista_inteiros):
+    dic={}
+    for num in lista_inteiros:
+        if num in dic.keys():
+            dic[num]+=1
+        else:
+            dic[num]=1
+    for qtd in dic.values():
+        if qtd>=5:
+            return 50
+    return 0
+
