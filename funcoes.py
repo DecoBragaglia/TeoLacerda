@@ -110,3 +110,18 @@ def calcula_pontos_full_house(lista_inteiros):
             else:
                 soma+=(2*numero)
     return soma
+
+def calcula_pontos_quadra(dados):
+    contagem = {}
+    for dado in dados:
+        if dado in contagem:
+            contagem[dado] += 1
+        else:
+            contagem[dado] = 1
+    soma =0
+    for qtd in contagem.values():
+        if qtd >= 4:
+            for dado in dados: 
+                soma += dado
+            return soma
+    return soma
