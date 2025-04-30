@@ -93,5 +93,20 @@ def calcula_pontos_sequencia_alta(dados):
 
             return 0
     return 30
-    
-    
+
+def calcula_pontos_full_house(lista_inteiros):
+    dic={}
+    for inteiro in lista_inteiros:
+        if inteiro not in dic.keys():
+            dic[inteiro]=1
+        else:
+            dic[inteiro]+=1
+    valores = dic.values()
+    soma=0
+    if 3 in valores and 2 in valores:
+        for numero in dic.keys():
+            if dic[numero]==3:
+                soma+=(3*numero)
+            else:
+                soma+=(2*numero)
+    return soma
